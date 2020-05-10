@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Validation</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="row justify-content-center mt-5">
+			<div class="col-md-6">
+
+				<form onsubmit="return validation()" method="post" class="shadow-lg p-3">
+					<h2 class="text-info text-center">Registration Form</h2>
+					<div class="form-group">
+						<label>Enter Username</label>
+						<input type="text" id="uname" name="" class="form-control">
+						<span class="text-danger" id="uerr"></span>
+					</div>
+
+					<div class="form-group">
+						<label>Enter Mobile No</label>
+						<input type="text" id="mno" name="" class="form-control">
+						<span class="text-danger" id="mobile"></span>
+					</div>
+
+					<div class="form-group">
+						<label>Enter Email Id</label>
+						<input type="text" id="email" name="" class="form-control">
+						<span class="text-danger" id="uemail"></span>
+					</div>
+
+					<div class="form-group">
+						<label>Enter Pasword</label>
+						<input type="password" id="pass" name="" class="form-control">
+						<span class="text-danger" id="upass"></span>
+					</div>
+
+					<div class="form-group">
+						<label>Enter Confirm Password</label>
+						<input type="password" id="cpass" name="" class="form-control">
+						<span class="text-danger" id="ucpass"></span>
+					</div>
+
+					<div class="form-group">
+						<input type="submit" class="btn btn-lg btn-block btn-outline-success" name="">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		const validation = () =>{
+
+			let user = document.getElementById("uname").value;
+			let mobileNo = document.getElementById("mno").value;
+			let email = document.getElementById("email").value;
+			let pass = document.getElementById("pass").value;
+			let cpass = document.getElementById("cpass").value;
+
+			if(user == ""){
+				document.getElementById("uerr").innerHTML = "Username is required";
+				return false;
+			}else if((user.length <=2) || (user.length > 20)){
+				document.getElementById("uerr").innerHTML = "Username Should Min 3 And Max 20 Alpha";
+				return false;
+			}else if(!isNaN(user)){
+				document.getElementById("uerr").innerHTML = "Username Contain Only Alpha";
+				return false;
+			}
+
+
+			if(mobileNo == ""){
+				document.getElementById("mobile").innerHTML = "Mobile No Is Required";
+				return false;
+			}else if(isNaN(mobileNo)){
+				document.getElementById("mobile").innerHTML = "Mobile No Only Numeric";
+				return false;
+			}else if(mobileNo.length!=10){
+				document.getElementById("mobile").innerHTML = "Mobile No Min 10 Numbers";
+				return false;
+			}
+
+			if(email == ""){
+				document.getElementById("uemail").innerHTML = "Email Id is required";
+				return false;
+			}
+
+			if(pass == ""){
+				document.getElementById("upass").innerHTML = "Password is required";
+				return false;
+			}else if((pass.length <=5) || (pass.length > 20)){
+				document.getElementById("upass").innerHTML = "Password Should Min 5 And Max 20 Alpha";
+				return false;
+			}
+
+			if(cpass == ""){
+				document.getElementById("ucpass").innerHTML = "Confirm Password no is required";
+				return false;
+			}else if(pass == cpass){
+				document.getElementById("ucpass").innerHTML = "Confirm Password And Password Not Match";
+				return false;
+			}
+
+
+		}
+	</script>
+
+</body>
+</html>

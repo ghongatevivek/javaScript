@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		var x=0;
+		var y1 = "My NAme Is VIVEK";
+		console.log(x);
+
+		f1();
+		function f1(){
+			debugger;
+			var localVarF1 = "Vivel";
+			var y2 = "This Is y2 Inside";
+			console.log(x);
+
+			f2();
+			function f2(){
+				debugger;
+				var localVarF2 = "Prashnat";
+				var y3 = "This Is y3 Inside In F1()";
+				console.log(x);
+
+				f3();
+				function f3(){
+					debugger;
+					var localVarF3 = "Ghongate";
+					var y4 = "This Is y4 Inside In F2()";
+					console.log(x);
+
+					console.log(y4);
+					console.log(y3);
+					console.log(y2);
+					console.log(y1);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

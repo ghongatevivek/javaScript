@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script >
+		var guestName = ["vivek","prashant","vishal","bhaurao","raju"];
+
+		var name = prompt("Please Enter Your Name......");
+
+		var checkGuest = guestName.includes(name);
+
+		// alert(checkGuest);
+
+		if(checkGuest == true){
+
+			alert("Hello " + name + " Welcome In Party........");
+		}else{
+			alert("Sorry "+name+" You Are Not Invited In Party.....");
+		}
+	</script>
+</body>
+</html>

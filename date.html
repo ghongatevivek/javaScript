@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date In Javascript</title>
+</head>
+<body>
+
+	<!-- <script type="text/javascript">
+		var d= new Date();
+		var month = d.getUTCMonth()+1;
+		// console.log(month);
+		var year = d.getUTCFullYear();
+		// console.log(year);
+
+		var day = d.getUTCDate();
+		// console.log(day);
+		
+		document.write(day + "/" + month + "/" + year );
+	</script> -->
+
+	<script type="text/javascript">
+		var d= new Date();
+		var t= d.getTime();
+
+		var hours = d.getHours();
+		var minute = d.getMinutes();
+		var secound = d.getSeconds();
+		document.write(hours+":"+minute+":"+secound);
+
+
+		// var time = d.toLocaleTimeString();
+		// console.log(time);
+	</script>
+
+</body>
+</html>

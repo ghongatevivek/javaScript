@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+		<p id="vivek">Vivek</p>
+	<p class="g">Ghongate</p>
+	<p class="g">Patil</p>
+
+	<ul><li>Vivk</li><li>Patil</li><li>Ghongate</li><li>Ghongate</li></ul>
+
+	<script type="text/javascript">
+		var child = document.body.children;
+		console.log(child);
+
+		// add a new Child In Body
+
+		var para = document.createElement("p");
+		var text = document.createTextNode("My Name Is Prashant");
+		para.appendChild(text);
+		// console.log(para)
+		// document.write(para);
+		document.body.appendChild(para); 
+
+		// access First Child And Last Child
+
+		var list = document.querySelector("ul");
+		// console.log(list);
+
+		console.log(list.firstChild);
+		console.log(list.lastChild);
+
+
+		var fsiblinf = vivek.nextElementSibling;
+		console.log(fsiblinf);
+
+		console.log(list.parentNode);
+	</script>
+</body>
+</html>

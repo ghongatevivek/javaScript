@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{padding: 0;margin:0;box-sizing: border-box; }
+
+		.mainDiv{
+			height: 100vh;
+			width: 100%;
+			background-color: #3498db;
+			position: relative;
+		}
+		.centerDiv{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+		}
+
+		h1{
+			text-transform: capitalize;
+			margin-bottom: 30px;
+			color: #ecf0f1;
+			text-shadow: 1px 2px 3px #2980b9;
+			font-size: 2.1rem;
+
+		}
+
+		h2{
+			text-align: center;
+		}
+
+		textarea{
+			background-color: #444;
+			box-shadow: 0 0 1px rgba(0,0,0,0.2);
+			border: 20px solid #34495e;
+			color: #fff;
+			font-size: 1.3rem;
+			border-radius: 10px 10px 0 0 ;
+		}
+
+		.mainBtn{
+			padding: 10px 20px;
+			border-radius: 20px;
+			border:5px solid #2980b9;
+			font-size: 1rem;
+			background: #ecf0f1;
+		}
+	</style>
+</head>
+<body>
+	<div class="mainDiv">
+		<div class="centerDiv">
+			<h1>Welcome To Typing Speed Test</h1>
+			<h2 id="text"></h2><br>
+			<textarea id="words" cols="100" rows="10" placeholder="Remember,be nice "></textarea><br>
+			<button id="btn" class="mainBtn">Start Test</button>
+		</div>
+	</div>
+
+	<script>
+		const setOfWords = [
+			"My name is Vivek Raju Ghongate.",
+			"My College name is Vimal Tormal Poddar Bca College Pandesara.",
+			"I am a Php Codeighnter Devloper."
+		];
+
+		const msg = document.getElementById("text");
+		const typeWords = document.getElementById("words");
+		const btn = document.getElementById("btn");
+		let startTime , endTime;
+
+
+		const playGame = () =>{
+			let randomeNo = Math.floor(Math.random()*setOfWords.length);
+			// console.log(randomeNo);
+			msg.innerText = setOfWords[randomeNo];
+
+			let date = new Date();
+			startTime = date.getTime();
+			btn.innerText = "Done";
+		}
+
+		const endPlay = () =>{
+			let date = new Date();
+			endTime = date.getTime();
+			let totalTime = ((endTime - startTime)/1000);
+			// console.log(totalTime);	
+
+
+			let totalStr = typeWords.value;
+			let wordCount = wordCounter(totalStr);
+
+			let speedOfTyping = Math.round((wordCount / totalTime) * 60);
+			let finalMsg = "You Are Typed At " + speedOfTyping+" Word per Minutes";
+			// console.log(speedOfTyping);
+
+			finalMsg += compareWord(msg.innerText,totalStr);
+			msg.innerText = finalMsg;
+		}
+
+		const compareWord = (str1,str2) =>{
+
+			let word1 = str1.split(" ");
+			let word2 = str2.split(" ");
+			let cnt = 0;
+
+			word1.forEach(function(item,index){
+				if(item == word2[index]){
+					cnt++;
+				}
+			})
+
+			let errWord = (word1.length - cnt);
+			return (cnt + " correct Out Of " + word1.length + " Word And The Total No Of error are "+ errWord + " .");
+		}
+
+		const wordCounter = (str) =>{
+			let response = str.split(" ").length;
+			// console.log(response);
+			return response;
+		}
+
+		btn.addEventListener('click',function(){
+			// console.log(this);  define Btn Scope
+			if(this.innerText == 'Start Test'){
+				typeWords.disabled = false;
+				playGame();
+			}else if(this.innerText == 'Done'){
+				typeWords.disabled = true;
+				btn.innerText = "Start";
+				endPlay();
+			}
+		})
+	</script>
+</body>
+</html>

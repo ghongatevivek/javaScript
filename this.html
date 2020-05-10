@@ -1,0 +1,38 @@
+<script>
+	
+	// When Use Alone This it refer To Global Object
+	// When Use use strict mode This it refer To Global Object
+	// When Use regular function This it refer To Global Object
+	// When Use method  This it refer To owner objetc
+
+	// "use strict"
+	
+	// console.log(this);
+
+	// function sum() {
+	// 	var add = 5+4;
+	// 	console.log(add);
+	// 	console.log(this);
+	// }
+
+	// sum();
+
+	const vivek = {
+		name : "Vivek",
+		lname : "Ghongate",
+		sum : function(){
+			var add = 5+4;
+			console.log(add);
+			console.log(this);
+
+			function secound(){
+				var age = 20;
+				console.log(age);
+				console.log(this);
+			}
+			secound();
+		}
+	}
+
+	vivek.sum();
+</script>

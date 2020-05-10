@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fizz Buzz</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		function fb(){
+			var fizzBuzz = [];
+			var i=1;
+
+			while(i<=100){
+				if((i%3) == 0 && (i%5) == 0){
+					fizzBuzz.push("FizzBuzz");
+
+				}else if((i%3) == 0){
+					fizzBuzz.push("Fizz");
+				}else if((i%5) == 0){
+					fizzBuzz.push("Buzz");
+
+				}else if((i%3) == 0 && (i%5) == 0){
+					fizzBuzz.push("FizzBuzz");
+
+				}else{
+					fizzBuzz.push(i+"\t");
+				}
+				i++;
+			}
+
+			console.log(fizzBuzz);
+		}
+
+		fb();
+	</script>
+
+</body>
+</html>

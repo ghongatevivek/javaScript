@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Switch</title>
+</head>
+<body>
+
+	<ul>
+		<li>Add</li>
+		<li>Sub</li>
+		<li>Mul</li>
+	</ul>
+
+	<form method="post">
+		<input type="text" name="no" id="txt">
+		<button onclick="myfun()">Click Me </button>
+	</form>
+
+	<script>
+		function myfun(){
+			var choise = document.getElementById("txt").value;
+
+		// alert(choise);
+
+			switch(choise){
+				case "add":
+							var a=10;
+							var b=10;
+							var sum=a+b;
+							document.write("Your Addition Is "+ sum);
+							break;
+				case "sub":
+							var a=10;
+							var b=10;
+							var sum=a-b;
+							document.write("Your Subtration Is "+ sum);
+							break;
+				case "mult":
+							var a=10;
+							var b=10;
+							var sum=a*b;
+							document.write("Your Multiplication Is "+ sum);
+							break;
+				default:alert("Not A Valid Input");
+			}
+		}
+	</script>
+</body>
+</html>

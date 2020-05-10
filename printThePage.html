@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Using Javascript rint The Page</title>
+</head>
+<body>
+
+	<div id="one">
+		My Name Is Vivek.
+		<button onclick="Page('one')">First</button>
+	</div>
+
+
+	<div id="two">
+		My Name Is Vivek Ghongate.
+		<button onclick="Page('two')">Secound</button>
+	</div>
+
+
+	<div id="three">
+		My Name Is Vivek Raju Ghongate.
+		<button onclick="Page('three')">Third</button>
+	</div>
+
+	<button onclick="wholePage()">Print Whole Page</button>
+
+	<script type="text/javascript">
+		
+		function wholePage(){
+			window.print();
+		}
+
+		function Page(paravalue){
+			var backup = document.body.innerHTML;
+
+			var divcontent = document.getElementById(paravalue).innerHTML;
+			// console.log(divcontent);
+
+			 document.body.innerHTML = divcontent;
+			window.print();
+			 document.body.innerHTML = backup;
+		}
+	</script>
+</body>
+</html>

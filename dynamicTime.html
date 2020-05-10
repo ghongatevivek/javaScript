@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="Time"></p>
+
+	<button onclick="clearInterval(dynamicTime)">Click For Stop Time</button>
+	<!-- <button onclick="setInterval(dynamicTime)">Click For Start Time</button> -->
+	<script type="text/javascript">
+		
+		var dynamicTime = setInterval(clockTime,1000);
+
+		function clockTime(){
+			var d = new Date();
+			var time = d.toLocaleTimeString();
+			document.getElementById("Time").innerHTML=time;
+		}
+	</script>
+
+</body>
+</html>

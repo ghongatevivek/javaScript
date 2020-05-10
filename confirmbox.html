@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="submit" onclick="confirmb()" value="Click Me">
+
+	<script>
+		
+		function confirmb(){
+
+			var confirmbox=confirm("You Want To Display Your Name");
+
+			if(confirmbox==true){
+				document.write("Vivek");
+				return true;
+			}else{
+				document.write("You Cant Display Your Name");
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<div class="card-header text-center bg-info">Body Mass Index Calculator</div>
+			<div class="card-body">
+				<form class="w-50 m-auto" method="post" onsubmit="return false">
+					<div class="form-group">
+						<label>Weight</label>
+						<input type="text" placeholder="Weight In KG" name="weight" id="weight" class="form-control" required>
+					</div>
+
+					<div class="form-group">
+						<label>Height</label>
+						<input type="text" name="Height" placeholder="Height In Ft" id="height" class="form-control" required>
+					</div>
+
+					<div class="form-group">
+						<label>Your BMI Index Value</label>
+						<input type="text" name="bmi" id="bmi" class="form-control">
+					</div>
+
+					<input type="submit" onclick="checkValue()" class="btn btn-success" name="">
+				</form>
+			</div>
+			<div class="card-footer text-center bg-info text-white">Healty Range Between 19 TO 25</div>
+
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		
+		
+
+		function checkValue() {
+			var height = document.getElementById("height").value;
+			var weight = document.getElementById("weight").value;
+
+			height = height * 12;     //Convert Into Inch
+			height = height * 0.025;  //Convert Into Meter
+
+			// var newBmi = weight / (height * height);
+			var newBmi = weight / Math.pow(height,2);
+
+			newBmi = Math.round(newBmi);
+
+			document.getElementById("bmi").value = newBmi;
+
+		}
+	</script>
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+</body>
+</html>

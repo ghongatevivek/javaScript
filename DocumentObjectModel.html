@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM</title>
+</head>
+<body>
+
+	<p id="vivek">Vivek</p>
+	<p class="g">Ghongate</p>
+	<p class="g">Patil</p>
+	
+
+
+	<!-- how to access Element Using By ID -->
+	<script type="text/javascript">
+		
+		var v= document.getElementById("vivek").innerHTML;
+
+		document.write(v);
+	</script>
+
+	<!-- how to access Element Using By CLASS -->
+	<script type="text/javascript">
+		var g=document.getElementsByClassName("g")[1].innerHTML;
+
+		// same p tag hone ke karan index number dena hai
+		document.write(g);
+	</script>
+
+	<!-- how to access Element Using Tag NAme -->
+	<script type="text/javascript">
+		var t=document.getElementsByTagName("p");
+		document.write(t);
+		console.log(t);
+	</script>
+	<!-- how to access First Element -->
+	<script type="text/javascript">
+		var e=document.querySelector("p").innerHTML;
+		document.write(e);
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Revrse The String</title>
+</head>
+<body>
+	<input type="text" name="name" id="simpleText" onkeyup="reverseString()">
+	<input type="text" name="rname" id="reverseText">
+
+	<script type="text/javascript">
+		
+		function reverseString(){
+			var str = document.getElementById("simpleText").value;
+			// console.log(str);
+
+			var newString = "";
+
+			// vivek = 5-1 = 4;4>=0;
+			// newString += str[i]   //It means above
+			// newString = newString + str[i];
+			// newString = "" + str[4];  //index no of string
+			// newString = "" + k;
+			// newString = k;
+
+			// newString Count All ways from 0 
+
+
+			for(var i=str.length-1;i>=0;i--){
+				newString += str[i];
+			}
+
+			var r = document.getElementById("reverseText").value = newString;
+			// console.log(r);
+		}
+	</script>
+</body>
+</html>
